@@ -75,10 +75,13 @@ promptUser()
         console.log(readmeDATA);
         
         const readmeTXT = generateMarkdown(readmeDATA);
-    });
 
-// // TODO: Create a function to write README file
-// function writeToFile(fileName, data) {}
+        fs.writeFile('./README.md', readmeTXT, err => {
+            if (err) throw err;
+        
+            console.log('README.md Generated!');
+        });
+    });
 
 // // TODO: Create a function to initialize app
 // function init() {}
