@@ -79,7 +79,7 @@ const generateUser = userText => {
 
   Email : ${userText.email}
 
-  GitHub : https://github.com/${userText.username}
+  [GitHub](https://github.com/${userText.username})
   `
 };
 
