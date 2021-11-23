@@ -5,10 +5,10 @@ const generateMarkdown = require('./utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input
 const personalQuestions = ["What is your name?", "What is your GitHub username?",
-    "What is your email?"];
+    "What is your email?", "Brief bio: "];
 
 const projectQuestions = ["What is the name of this project?", "What languages did you use?",
-    "What is the GitHub repo link?", "What is the GitHub deployed page link?", "Brief description: "];
+    "What dependecies did you use?", "Brief description: ", "What license do you have?"];
 
 const promptUser = () => {
     console.log(`====== README Personal Questions ======`);
@@ -17,17 +17,62 @@ const promptUser = () => {
         {
             type: 'input',
             name: 'name',
-            message: personalQuestions[0]
+            message: personalQuestions[0],
+            //default: 'dankle',
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                }
+                else {
+                    console.log('Please enter your name...');
+                    return false;
+                }
+            }
         },
         {
             type: 'input',
             name: 'username',
-            message: personalQuestions[1]
+            message: personalQuestions[1],
+            //default: 'danklebob',
+            validate: usernameInput => {
+                if (usernameInput) {
+                    return true;
+                }
+                else {
+                    console.log('Please enter your username...');
+                    return false;
+                }
+            }
         },
         {
             type: 'input',
             name: 'email',
-            message: personalQuestions[2]
+            message: personalQuestions[2],
+            //default: 'danklebob@gmail.com',
+            validate: emailInput => {
+                if (emailInput) {
+                    return true;
+                }
+                else {
+                    console.log('Please enter your email...');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'about',
+            message: personalQuestions[3], 
+            //default: 'I am dankle bob. The man, the myth, the legend.',
+            validate: aboutInput => {
+                if (aboutInput) {
+                    return true;
+                }
+                else {
+                    console.log('Please enter info about yourself or your team...');
+                    return false;
+                }
+            }
         }
     ]);
 };
@@ -39,35 +84,66 @@ const promptQuestions = readmeDATA => {
         {
             type: 'input',
             name: 'projectName',
-            message: projectQuestions[0]
+            message: projectQuestions[0],
+            //default: 'dankle-reader',
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                }
+                else {
+                    console.log('Please enter the project name...');
+                    return false;
+                }
+            }
         },
         {
             type: 'checkbox',
             name: 'lang',
             message: projectQuestions[1],
-            choices: ['JavaScript', 'HTML', 'CSS', 'ES6', 'jQuery', 'Bootstrap', 'Node']
+            choices: ['JavaScript', 'HTML', 'CSS', 'ES6', 'jQuery', 'Bootstrap', 'Node'],
+            validate: langInput => {
+                if (langInput) {
+                    return true;
+                }
+                else {
+                    console.log('Please enter your the languages used in this project...');
+                    return false;
+                }
+            }
         },
         {
             type: 'input',
-            name: 'repoLink',
-            message: projectQuestions[2]
-        },
-        {
-            type: 'input',
-            name: 'pageLink',
-            message: projectQuestions[3]
+            name: 'dependecies',
+            message: projectQuestions[2],
+            //default: 'inquirer',
         },
         {
             type: 'input',
             name: 'desc',
-            message: projectQuestions[4]
+            message: projectQuestions[3],
+            //default: 'i love to dankle the bob',
+            validate: descInput => {
+                if (descInput) {
+                    return true;
+                }
+                else {
+                    console.log('Please enter info about your project...');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'checkbox',
+            name: 'license',
+            message: projectQuestions[4],
+            choices: ['IBM', 'ISC', 'MIT', 'Boost']
         }
     ])
     .then(projectData => {
         readmeDATA.project = projectData;
         return readmeDATA;
     });
-}
+};
 
 promptUser()
     .then(promptQuestions)
@@ -82,9 +158,3 @@ promptUser()
             console.log('README.md Generated!');
         });
     });
-
-// // TODO: Create a function to initialize app
-// function init() {}
-
-// // Function call to initialize app
-// init();
