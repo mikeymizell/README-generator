@@ -8,7 +8,8 @@ const personalQuestions = ["What is your name?", "What is your GitHub username?"
     "What is your email?", "Brief bio: "];
 
 const projectQuestions = ["What is the name of this project?", "What languages did you use?",
-    "What dependecies did you use?", "Brief description: ", "What license do you have?"];
+    "What dependecies did you use?", "Brief description: ", "What tests can be run?", 
+    "How do you use this project?", "What license do you have?"];
 
 const promptUser = () => {
     console.log(`====== README Personal Questions ======`);
@@ -18,7 +19,7 @@ const promptUser = () => {
             type: 'input',
             name: 'name',
             message: personalQuestions[0],
-            //default: 'dankle',
+            default: 'dankle',
             validate: nameInput => {
                 if (nameInput) {
                     return true;
@@ -33,7 +34,7 @@ const promptUser = () => {
             type: 'input',
             name: 'username',
             message: personalQuestions[1],
-            //default: 'danklebob',
+            default: 'danklebob',
             validate: usernameInput => {
                 if (usernameInput) {
                     return true;
@@ -48,7 +49,7 @@ const promptUser = () => {
             type: 'input',
             name: 'email',
             message: personalQuestions[2],
-            //default: 'danklebob@gmail.com',
+            default: 'danklebob@gmail.com',
             validate: emailInput => {
                 if (emailInput) {
                     return true;
@@ -63,7 +64,7 @@ const promptUser = () => {
             type: 'input',
             name: 'about',
             message: personalQuestions[3], 
-            //default: 'I am dankle bob. The man, the myth, the legend.',
+            default: 'I am dankle bob. The man, the myth, the legend.',
             validate: aboutInput => {
                 if (aboutInput) {
                     return true;
@@ -85,7 +86,7 @@ const promptQuestions = readmeDATA => {
             type: 'input',
             name: 'projectName',
             message: projectQuestions[0],
-            //default: 'dankle-reader',
+            default: 'dankle-reader',
             validate: nameInput => {
                 if (nameInput) {
                     return true;
@@ -115,13 +116,13 @@ const promptQuestions = readmeDATA => {
             type: 'input',
             name: 'dependecies',
             message: projectQuestions[2],
-            //default: 'inquirer',
+            default: 'inquirer',
         },
         {
             type: 'input',
             name: 'desc',
             message: projectQuestions[3],
-            //default: 'i love to dankle the bob',
+            default: 'i love to dankle the bob',
             validate: descInput => {
                 if (descInput) {
                     return true;
@@ -133,11 +134,24 @@ const promptQuestions = readmeDATA => {
             }
         },
         {
+            type: 'input',
+            name: 'testIns',
+            message: projectQuestions[4],
+            default: '***NO TESTS AVAILABLE***'
+        },
+        {
+            type: 'input',
+            name: 'usageIns',
+            message: projectQuestions[5],
+            default: 'this project just runs lol'
+        },
+        {
             type: 'checkbox',
             name: 'license',
-            message: projectQuestions[4],
+            message: projectQuestions[6],
             choices: ['IBM', 'ISC', 'MIT', 'Boost']
-        }
+        },
+        
     ])
     .then(projectData => {
         readmeDATA.project = projectData;
@@ -152,7 +166,7 @@ promptUser()
         
         const readmeTXT = generateMarkdown(readmeDATA);
 
-        fs.writeFile('./README.md', readmeTXT, err => {
+        fs.writeFile('./generated/README.md', readmeTXT, err => {
             if (err) throw err;
         
             console.log('README.md Generated!');

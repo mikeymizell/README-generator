@@ -118,18 +118,38 @@ module.exports = templateData => {
 
   ${generateUser(user)}
 
+  ### Table of Contents
+  
+  1. [Project details](#project-description)
+      1. [Dependencies](#dependencies)
+      2. [Instructions](#how-to-use)
+      3. [Tests](#testing)
+  3. [Links](#links)
+  4. [Licenses](#license-links)
+  
+
   ## Project Description
   ---
 
   ${project.desc}
 
-  ### Dependecies
+  ### Dependencies
 
   ${generateDependecies(project)}
+
+  ### How to use
+
+  ${project.usageIns}
+
+  ### Testing 
+
+  ${project.testIns}
 
   ### Languages Used:
 
   ${generateLang(project)}
+  
+  ---
 
   ### Links:
 
