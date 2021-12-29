@@ -1,26 +1,28 @@
-[![License: IPL 1.0](https://img.shields.io/badge/License-IPL_1.0-blue.svg)](https://opensource.org/licenses/IPL-1.0)   
+
   ---
 
-  # phantom-creator
+  # dankle-reader
 
   ## About the dev(s)
   ---
 
-  - danny phantom
+  - dankle
 
-  I am danny phantom, world famous phantom
+  I am dankle bob. The man, the myth, the legend.
 
   ### Contact Info
 
-  Email : dabigboi@gmail.com
+  Email : danklebob@gmail.com
 
-  [GitHub](https://github.com/phntmDanny)
+  [GitHub](https://github.com/danklebob)
   
 
   ### Table of Contents
   
   1. [Project details](#project-description)
-  2. [Dependencies](#dependencies)
+      1. [Dependencies](#dependencies)
+      2. [Instructions](#how-to-use)
+      3. [Tests](#testing)
   3. [Links](#links)
   4. [Licenses](#license-links)
   
@@ -28,40 +30,32 @@
   ## Project Description
   ---
 
-  take me to church i worship like a dog
+  i love to dankle the bob
 
-  ### Dependecies
+  ### Dependencies
 
-        npm install jest
+        npm install inquirer
 
   ### How to use
 
-  you dont use it, it uses you
+  this project just runs lol
 
   ### Testing 
 
-  
+  ***NO TESTS AVAILABLE***
 
   ### Languages Used:
-
-  - JavaScript
-
-  - HTML
-
-  - CSS
 
   
   
 
   ### Links:
 
-  [GitHub Repo](https://github.com/phntmDanny/phantom-creator)
+  [GitHub Repo](https://github.com/danklebob/dankle-reader)
 
-  [Project Website](https://phntmDanny.github.io/phantom-creator)
+  [Project Website](https://danklebob.github.io/dankle-reader)
 
   ### Licenses Links
 
-- [IBM](https://opensource.org/licenses/IPL-1.0)
-      
 
 

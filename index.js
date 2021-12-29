@@ -19,7 +19,7 @@ const promptUser = () => {
             type: 'input',
             name: 'name',
             message: personalQuestions[0],
-            //default: 'dankle',
+            default: 'dankle',
             validate: nameInput => {
                 if (nameInput) {
                     return true;
@@ -34,7 +34,7 @@ const promptUser = () => {
             type: 'input',
             name: 'username',
             message: personalQuestions[1],
-            //default: 'danklebob',
+            default: 'danklebob',
             validate: usernameInput => {
                 if (usernameInput) {
                     return true;
@@ -49,7 +49,7 @@ const promptUser = () => {
             type: 'input',
             name: 'email',
             message: personalQuestions[2],
-            //default: 'danklebob@gmail.com',
+            default: 'danklebob@gmail.com',
             validate: emailInput => {
                 if (emailInput) {
                     return true;
@@ -64,7 +64,7 @@ const promptUser = () => {
             type: 'input',
             name: 'about',
             message: personalQuestions[3], 
-            //default: 'I am dankle bob. The man, the myth, the legend.',
+            default: 'I am dankle bob. The man, the myth, the legend.',
             validate: aboutInput => {
                 if (aboutInput) {
                     return true;
@@ -86,7 +86,7 @@ const promptQuestions = readmeDATA => {
             type: 'input',
             name: 'projectName',
             message: projectQuestions[0],
-            //default: 'dankle-reader',
+            default: 'dankle-reader',
             validate: nameInput => {
                 if (nameInput) {
                     return true;
@@ -116,13 +116,13 @@ const promptQuestions = readmeDATA => {
             type: 'input',
             name: 'dependecies',
             message: projectQuestions[2],
-            //default: 'inquirer',
+            default: 'inquirer',
         },
         {
             type: 'input',
             name: 'desc',
             message: projectQuestions[3],
-            //default: 'i love to dankle the bob',
+            default: 'i love to dankle the bob',
             validate: descInput => {
                 if (descInput) {
                     return true;
@@ -143,7 +143,7 @@ const promptQuestions = readmeDATA => {
             type: 'input',
             name: 'usageIns',
             message: projectQuestions[5],
-            //default: 'this project just runs lol
+            default: 'this project just runs lol'
         },
         {
             type: 'checkbox',

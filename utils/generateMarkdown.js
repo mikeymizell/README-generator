@@ -121,7 +121,9 @@ module.exports = templateData => {
   ### Table of Contents
   
   1. [Project details](#project-description)
-  2. [Dependencies](#dependencies)
+      1. [Dependencies](#dependencies)
+      2. [Instructions](#how-to-use)
+      3. [Tests](#testing)
   3. [Links](#links)
   4. [Licenses](#license-links)
   
@@ -131,7 +133,7 @@ module.exports = templateData => {
 
   ${project.desc}
 
-  ### Dependecies
+  ### Dependencies
 
   ${generateDependecies(project)}
 
@@ -147,6 +149,7 @@ module.exports = templateData => {
 
   ${generateLang(project)}
   
+  ---
 
   ### Links:
 
