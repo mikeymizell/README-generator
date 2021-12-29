@@ -8,7 +8,8 @@ const personalQuestions = ["What is your name?", "What is your GitHub username?"
     "What is your email?", "Brief bio: "];
 
 const projectQuestions = ["What is the name of this project?", "What languages did you use?",
-    "What dependecies did you use?", "Brief description: ", "What license do you have?"];
+    "What dependecies did you use?", "Brief description: ", "What tests can be run?", 
+    "How do you use this project?", "What license do you have?"];
 
 const promptUser = () => {
     console.log(`====== README Personal Questions ======`);
@@ -133,11 +134,24 @@ const promptQuestions = readmeDATA => {
             }
         },
         {
+            type: 'input',
+            name: 'testIns',
+            message: projectQuestions[4],
+            default: '***NO TESTS AVAILABLE***'
+        },
+        {
+            type: 'input',
+            name: 'usageIns',
+            message: projectQuestions[5],
+            //default: 'this project just runs lol
+        },
+        {
             type: 'checkbox',
             name: 'license',
-            message: projectQuestions[4],
+            message: projectQuestions[6],
             choices: ['IBM', 'ISC', 'MIT', 'Boost']
-        }
+        },
+        
     ])
     .then(projectData => {
         readmeDATA.project = projectData;

@@ -135,9 +135,18 @@ module.exports = templateData => {
 
   ${generateDependecies(project)}
 
+  ### How to use
+
+  ${project.usageIns}
+
+  ### Testing 
+
+  ${project.testIns}
+
   ### Languages Used:
 
   ${generateLang(project)}
+  
 
   ### Links:
 
