@@ -118,6 +118,14 @@ module.exports = templateData => {
 
   ${generateUser(user)}
 
+  ### Table of Contents
+  
+  1. [Project details](#project-description)
+  2. [Dependencies](#dependencies)
+  3. [Links](#links)
+  4. [Licenses](#license-links)
+  
+
   ## Project Description
   ---
 

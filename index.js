@@ -152,7 +152,7 @@ promptUser()
         
         const readmeTXT = generateMarkdown(readmeDATA);
 
-        fs.writeFile('./README.md', readmeTXT, err => {
+        fs.writeFile('./generated/README.md', readmeTXT, err => {
             if (err) throw err;
         
             console.log('README.md Generated!');
